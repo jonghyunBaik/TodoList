@@ -16,7 +16,7 @@ struct TodoItem: View {
                 Text("\(todoModel.id). \(todoModel.title)")
                 Spacer()
                 
-                Image(systemName: "checkmark")
+                Image(systemName: todoModel.completed ? "checkmark.circle.fill" : "checkmark.circle")
                     .foregroundStyle(todoModel.completed ? .green : .gray)
                     
             }.font(.title3)

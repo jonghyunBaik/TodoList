@@ -16,6 +16,7 @@
 		F68107B52AFE4E6E0029E668 /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F68107B42AFE4E6E0029E668 /* ListView.swift */; };
 		F68107B72AFE52D40029E668 /* loadJson.swift in Sources */ = {isa = PBXBuildFile; fileRef = F68107B62AFE52D40029E668 /* loadJson.swift */; };
 		F68107B92AFE575E0029E668 /* sample.json in Resources */ = {isa = PBXBuildFile; fileRef = F68107B82AFE575E0029E668 /* sample.json */; };
+		F6A9377E2AFF441C008B6C39 /* TodoDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6A9377D2AFF441C008B6C39 /* TodoDetail.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +30,7 @@
 		F68107B42AFE4E6E0029E668 /* ListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListView.swift; sourceTree = "<group>"; };
 		F68107B62AFE52D40029E668 /* loadJson.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = loadJson.swift; sourceTree = "<group>"; };
 		F68107B82AFE575E0029E668 /* sample.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = sample.json; sourceTree = "<group>"; };
+		F6A9377D2AFF441C008B6C39 /* TodoDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoDetail.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +67,7 @@
 				F68107A42AFE493B0029E668 /* ContentView.swift */,
 				F68107B42AFE4E6E0029E668 /* ListView.swift */,
 				F68107B02AFE49770029E668 /* TodoItem.swift */,
+				F6A9377D2AFF441C008B6C39 /* TodoDetail.swift */,
 				F68107B62AFE52D40029E668 /* loadJson.swift */,
 				F68107A62AFE493D0029E668 /* Assets.xcassets */,
 				F68107A82AFE493D0029E668 /* Preview Content */,
@@ -158,6 +161,7 @@
 				F68107B32AFE4CA20029E668 /* TodoModel.swift in Sources */,
 				F68107B52AFE4E6E0029E668 /* ListView.swift in Sources */,
 				F68107B12AFE49780029E668 /* TodoItem.swift in Sources */,
+				F6A9377E2AFF441C008B6C39 /* TodoDetail.swift in Sources */,
 				F68107A32AFE493B0029E668 /* TodoLIstApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
