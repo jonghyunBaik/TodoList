@@ -15,22 +15,37 @@ struct AddView: View {
     @State private var description = ""
     
     var body: some View {
-        VStack(alignment: .leading) {
-            TextField(text: $title) {
-                Text("title")
-            }
-            TextField(text: $description) {
-                Text("description")
-            }
-            
-            Button {
-                let tempModel : TodoModel = TodoModel(id: todostore.count + 1, title: title, description: description, completed: false)
-                todostore.append(tempModel)
-                self.presentationMode.wrappedValue.dismiss()
-            } label: {
-                Text("Add List")
-            }
-
+            VStack(alignment: .leading) {
+                HStack {
+                    Spacer()
+                    Text("Bucket List")
+                        .font(.largeTitle)
+                        .padding(.vertical, 30)
+                    Spacer()
+                }
+                
+                Text("Input Title of ToDo")
+                
+                TextField(text: $title) {
+                }
+                .padding(.bottom, 20)
+                .textFieldStyle(.roundedBorder)
+                
+                Text("Input Description of ToDo")
+                TextField(text: $description) {
+                }
+                .padding(.bottom, 20)
+                .textFieldStyle(.roundedBorder)
+                
+                Button {
+                    let tempModel : TodoModel = TodoModel(id: todostore.count + 1, title: title, description: description, completed: false)
+                    todostore.append(tempModel)
+                    self.presentationMode.wrappedValue.dismiss()
+                } label: {
+                    Text("Add List")
+                }
+                .buttonStyle(.borderedProminent)
+                Spacer()
         }
         .padding(20)
         .navigationBarBackButtonHidden()
