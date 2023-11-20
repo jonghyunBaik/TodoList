@@ -17,12 +17,12 @@ struct ListView: View {
                 HStack {
                     Spacer()
                     NavigationLink {
-                       AddView()
+                       AddView(todostore: $todoStore)
                     } label: {
                         Text("+").font(.title)
                     }
                     .padding(.trailing, 20)
-s
+
 
                 }
                 Text("ToDo 100")
