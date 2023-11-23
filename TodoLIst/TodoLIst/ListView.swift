@@ -10,24 +10,43 @@ import SwiftUI
 
 
 struct ListView: View {
-    @State var todoStore = TodoStore(items: todoData)
+    @State var todoStore : [TodoModel] = loadJson("sample.json")
     var body: some View {
         NavigationStack {
             VStack{
+                HStack {
+                    Spacer()
+                    NavigationLink {
+                       AddView(todostore: $todoStore)
+                    } label: {
+                        Text("+").font(.title)
+                    }
+                    .padding(.trailing, 20)
+
+
+                }
                 Text("ToDo 100")
                     .font(.title)
                 List {
-                    ForEach (0..<todoStore.items.count, id: \.self) { i in
-                        NavigationLink(destination : TodoDetail(todoModel: $todoStore.items[i])){
-                            TodoItem(todoModel: $todoStore.items[i])
+                    ForEach ($todoStore) { todo in
+                        NavigationLink(destination : TodoDetail(todoModel: todo)){
+                            TodoItem(todoModel: todo)
                             
                         }
                     }
+                    .onDelete(perform: removeRows)
                 }
+                .listStyle(.inset)
             }
         }
     }
+    func removeRows(at offsets: IndexSet) {
+        todoStore.remove(atOffsets: offsets)
+    }
 }
+
+
+
 
 #Preview {
     ListView()

@@ -16,16 +16,21 @@ struct TodoDetail: View {
                 .foregroundStyle(todoModel.completed ? .green : .gray)
                 .font(.title)
                 .padding(.vertical, 30)
-            Text(todoModel.title)
-                .font(.largeTitle)
+                .padding(.horizontal, 10)
+            HStack {
+                Text(todoModel.title)
+                    .font(.largeTitle)
+                Spacer()
+            }
             Text(todoModel.description)
                 .font(.title2)
             Spacer()
         }
         .padding()
+        .frame(width: .infinity)
     }
 }
 
 #Preview {
-    TodoDetail(todoModel: .constant(TodoModel(id: 1, title: "Eat Ttokbok2", description: "오늘은 떡볶이를 해먹어볼 생각입니다.", completed: true)))
+    TodoDetail(todoModel: .constant(TodoModel(id: 1, title: "Eat Ttokbok2", description: "오늘은 입니다.", completed: true)))
 }
