@@ -8,8 +8,10 @@
 import SwiftUI
 
 struct TodoDetail: View {
+    
+    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     @Binding var todoModel : TodoModel
-    @State var progress : Double = 0
+    
     var body: some View {
         VStack (alignment: .leading) {
             Image(systemName: todoModel.completed ? "checkmark.circle.fill" : "checkmark.circle")
@@ -18,19 +20,49 @@ struct TodoDetail: View {
                 .padding(.vertical, 30)
                 .padding(.horizontal, 10)
             HStack {
-                Text(todoModel.title)
+                Text("Title")
                     .font(.largeTitle)
+                TextField(text: $todoModel.title) {
+                    Text(todoModel.title)
+                }
+                .font(.title2)
+                .textFieldStyle(.roundedBorder)
+                
                 Spacer()
             }
-            Text(todoModel.description)
-                .font(.title2)
+            
+            HStack {
+                Text("Description")
+                    .font(.title2)
+                Spacer()
+            }
+            .padding(.top, 20)
+            
+            TextField(text: $todoModel.description) {
+                Text(todoModel.description)
+            }
+            .font(.title3)
+            .textFieldStyle(.roundedBorder)
+            
+            HStack {
+                Spacer()
+                Button(action: {
+                    self.presentationMode.wrappedValue.dismiss()
+                }, label: {
+                    Text("Save")
+                        .font(.title)
+                })
+                Spacer()
+            }
+            .padding(.top, 30)
+            
             Spacer()
         }
         .padding()
-        .frame(width: .infinity)
+        .navigationBarBackButtonHidden()
     }
 }
 
 #Preview {
-    TodoDetail(todoModel: .constant(TodoModel(id: 1, title: "Eat Ttokbok2", description: "오늘은 입니다.", completed: true)))
+    TodoDetail(todoModel: .constant(TodoModel(id: 1, title: "123", description: "123", completed: true)))
 }

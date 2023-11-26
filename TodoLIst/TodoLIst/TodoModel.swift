@@ -15,8 +15,6 @@ struct TodoModel : Decodable, Identifiable {
     
 }
 
-var todoData : [TodoModel] = loadJson("sample.json")
-
 class TodoStore {
     var items : [TodoModel]
     

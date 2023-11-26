@@ -10,7 +10,11 @@ import SwiftUI
 
 
 struct ListView: View {
-    @State var todoStore : [TodoModel] = loadJson("sample.json")
+    @State var todoStore : [TodoModel]
+    init() {
+        todoStore = loadJson("sample.json")
+    }
+    
     var body: some View {
         NavigationStack {
             VStack{
