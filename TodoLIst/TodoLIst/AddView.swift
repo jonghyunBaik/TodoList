@@ -9,7 +9,7 @@ import SwiftUI
 
 struct AddView: View {
     
-    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
+    @Environment(\.dismiss) private var dismiss
     @Binding var todostore : [TodoModel]
     @State private var title = ""
     @State private var description = ""
@@ -40,7 +40,7 @@ struct AddView: View {
                 Button {
                     let tempModel : TodoModel = TodoModel(id: todostore.count + 1, title: title, description: description, completed: false)
                     todostore.append(tempModel)
-                    self.presentationMode.wrappedValue.dismiss()
+                    dismiss()
                 } label: {
                     Text("Add List")
                 }

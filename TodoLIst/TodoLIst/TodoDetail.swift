@@ -9,7 +9,7 @@ import SwiftUI
 
 struct TodoDetail: View {
     
-    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
+    @Environment(\.dismiss) private var dismiss
     @Binding var todoModel : TodoModel
     
     var body: some View {
@@ -47,7 +47,7 @@ struct TodoDetail: View {
             HStack {
                 Spacer()
                 Button(action: {
-                    self.presentationMode.wrappedValue.dismiss()
+                    dismiss()
                 }, label: {
                     Text("Save")
                         .font(.title)

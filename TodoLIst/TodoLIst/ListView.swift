@@ -11,8 +11,10 @@ import SwiftUI
 
 struct ListView: View {
     @State var todoStore : [TodoModel]
+    private let loadJson : LoadJson = LoadJson()
     init() {
-        todoStore = loadJson("sample.json")
+        todoStore = loadJson.loadJson("sample.json")
+        
     }
     
     var body: some View {
